@@ -1,0 +1,24 @@
+<center> <h1>Show Employee</h1> </center>
+<%= flash[:notice] %>
+ <center> <p>
+	<strong>Fname:</strong>
+	<%= @employee.fname %>
+</p>
+<p>
+	<strong>Lname:</strong>
+	<%= @employee.lname %>
+</p>
+<p>
+	<strong>Age:</strong>
+	<%= @employee.age %>
+</p>
+<p>
+	<strong>Division:</strong>
+	<%= @employee.division %>
+</p> 
+
+<p> 
+	<%= link_to "<button>edit</button>" .html_safe, edit_employee_path(@employee) %>
+	<%= link_to "<button>view all</button>" .html_safe, employees_path %>
+	<%= link_to "<button>create</button>" .html_safe, new_employee_path(@employee) %>
+</p>  </center>

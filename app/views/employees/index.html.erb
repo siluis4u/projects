@@ -1,0 +1,38 @@
+<center><h1>Employees</h1></center>
+
+<% if :employees.empty? %>
+No Employees
+<% else %>
+<center>
+<table border="2">
+	<tr>
+		<th>fname</th>
+		<th>lname</th>
+		<th>age</th>
+		<th>division</th>
+	</tr>
+	<% for employee in @employees %>
+	<tr>
+		<td><%= employee.fname %></td>
+		<td><%= employee.lname %></td>
+		<td><%= employee.age %></td>
+		<td><%= employee.division %></td>
+		<td><center> <p><%= link_to "<button>Edit</button>".html_safe, edit_employee_path(employee) %></p> </center>
+		<center><p><%= link_to "<button>Delete</button>".html_safe, employee_path(employee), :method => 'delete', :confirm => "Do you want to delete" %></p> </center>
+
+<center> <p><%= link_to "<button>Show</button>".html_safe , employee_path(employee) + "?user=#{params[:user]}" %></p> </center></td>
+		
+	</tr>
+	<% end %>
+</table> </center>
+<% end %>
+
+
+
+
+<center><p><%= link_to "<button>New Employee</button>" .html_safe ,  new_employee_path %></p></center>
+
+
+
+
+
