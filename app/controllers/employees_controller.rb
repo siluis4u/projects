@@ -5,6 +5,7 @@ class EmployeesController < ApplicationController
   #around_filter :display_everytime, :except => [:delete]
 
   def index
+  #this is index method
   	@employees = Employee.all
   end
 
